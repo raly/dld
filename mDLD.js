@@ -1,7 +1,11 @@
 // JavaScript Document
 /*
-*管理组织JS CSS,调用方式dld.add("xxx.js/xxx.css",{id:'xxx'},['xxx','xxx'],callback);第一个参数如果忽略则必须填写依赖ID,1参数是文件url地址,2参数是文件id(默认取文件第一个"."之前的字母),3参数是文件模块以来(形式是所以来文件的id),4参数为回调函数
-
+*管理组织JS CSS,调用方式dld.imports("xxx.js/xxx.css",{id:'xxx'},['xxx','xxx'],callback);
+*提供四种类型参数.异步加载JS/CSS则必须填写文件路径,类型为string.
+*文件么配置参数为json..类似("id":"xxx","type":"js")
+*依赖模块配置为array类型参数.
+*最后提供文件加载完毕的callback
+*全局默认都依赖jquery为核心类库,如果只填写callback参数则,相当于存储方法队列,等待JＱ加载完毕之后依次执行．
 */
 ~function(win,doc){
     var dld = function(){
