@@ -232,8 +232,10 @@
                     for(var j = 0;j< readArr.length;j++){
                         if(file.relFile[i]==readArr[j]){
                             break ;
-                        }else{
-                            file.relFile.push(file.relFile[i]);
+                        }
+                        if(j == readArr.length-1&&file.relFile[i]!=readArr[j]){
+                           file.relFile.push(file.relFile[i]);
+                           break ;
                         }
                     }
                 }
